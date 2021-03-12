@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>Swiper demo</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet">
+
+
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+	<!-- Link Swiper's CSS -->
+	<link rel="stylesheet" href="../package/swiper-bundle.min.css">
+	<script type="module">
+  import Swiper from 'https://unpkg.com/swiper/swiper-bundle.esm.browser.min.js'
+
+  const swiper = new Swiper(...)
+</script>
+<script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+	<!-- Demo styles -->
+	<style>
+		html,
+		body {
+			position: relative;
+			height: 100%;
+		}
+
+		body {
+			background: #eee;
+			font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+			font-size: 14px;
+			color: #000;
+			margin: 0;
+			padding: 0;
+		}
+    .h{
+      font-size: 50px;
+      font-family: 'DotGothic16', sans-serif;
+    }
+    .box{
+      background-color: #000000;
+      border-radius:10px;
+      border: 0.5px solid white;
+      margin-left: 10px;
+      margin-right: 10px;
+      box-shadow: #ffffff;
+      margin-top:10px;
+    }
+     .box3{
+      background-color: #ffffff;
+      border-radius:10px;
+      border: 1px solid black;
+      margin-left:5% ;
+      box-shadow: #ffffff;
+      margin-top: 100px;
+      width: 90%;
+      height: 120px;
+      display: flex;
+    }
+    .box2{
+      background-color: #ffffff;
+      border-radius:10px;
+      border: 1px solid black;
+      margin-left:5% ;
+      box-shadow: #ffffff;
+      margin-top: 20px;
+      width: 90%;
+      height: 120px;
+      display: flex;
+    }
+    .p{
+      display:;
+      margin-top: 10px;
+      margin-right: 10px;
+      margin-left: 10px;
+      font-family: 'Open Sans Condensed', sans-serif;
+      font-size: 20px;
+    }
+		.swiper-container {
+			width: 100%;
+			height: 100%;
+		}
+
+		.swiper-slide {
+			text-align: center;
+			font-size: 18px;
+			background: #fff;
+
+			
+		}
+
+		.menu {
+			min-width: 100px;
+			width: 70%;
+			max-width: 320px;
+
+			background-color: #000000;
+			color: #fff;
+		}
+
+		.content {
+			width: 100%;
+			overflow-y: auto;
+		}
+
+		.menu-button {
+			position: fixed;
+			top: 0px;
+			left: 0px;
+
+			padding: 15px;
+
+			cursor: pointer;
+
+			-webkit-transition: .3s;
+			transition: .3s;
+
+			background-color: #ffffff;
+
+			/*margin: 14px;
+			border-radius: 5px;*/
+		}
+
+		.menu-button .bar:nth-of-type(1) {
+			margin-top: 0px;
+		}
+
+		.menu-button .bar:nth-of-type(3) {
+			margin-bottom: 0px;
+		}
+
+		.bar {
+			position: relative;
+			display: block;
+
+			width: 50px;
+			height: 5px;
+
+			margin: 10px auto;
+			background-color: #000000;
+
+			
+
+			-webkit-transition: .3s;
+			transition: .3s;
+		}
+
+		.menu-button:hover .bar:nth-of-type(1) {
+			-webkit-transform: translateY(1.5px) rotate(-4.5deg);
+			-ms-transform: translateY(1.5px) rotate(-4.5deg);
+			transform: translateY(1.5px) rotate(-4.5deg);
+		}
+
+		.menu-button:hover .bar:nth-of-type(2) {
+			opacity: .9;
+		}
+
+		.menu-button:hover .bar:nth-of-type(3) {
+			-webkit-transform: translateY(-1.5px) rotate(4.5deg);
+			-ms-transform: translateY(-1.5px) rotate(4.5deg);
+			transform: translateY(-1.5px) rotate(4.5deg);
+		}
+
+		.cross .bar:nth-of-type(1) {
+			-webkit-transform: translateY(15px) rotate(-45deg);
+			-ms-transform: translateY(15px) rotate(-45deg);
+			transform: translateY(15px) rotate(-45deg);
+		}
+
+		.cross .bar:nth-of-type(2) {
+			opacity: 0;
+		}
+
+		.cross .bar:nth-of-type(3) {
+			-webkit-transform: translateY(-15px) rotate(45deg);
+			-ms-transform: translateY(-15px) rotate(45deg);
+			transform: translateY(-15px) rotate(45deg);
+		}
+
+		.cross:hover .bar:nth-of-type(1) {
+			-webkit-transform: translateY(13.5px) rotate(-40.5deg);
+			-ms-transform: translateY(13.5px) rotate(-40.5deg);
+			transform: translateY(13.5px) rotate(-40.5deg);
+		}
+
+		.cross:hover .bar:nth-of-type(2) {
+			opacity: .1;
+		}
+
+		.cross:hover .bar:nth-of-type(3) {
+			-webkit-transform: translateY(-13.5px) rotate(40.5deg);
+			-ms-transform: translateY(-13.5px) rotate(40.5deg);
+			transform: translateY(-13.5px) rotate(40.5deg);
+		}
+		.comn{
+		  width:100px;
+		  height:100px;
+		  margin-right: 150px;
+		  margin-top: 10px;
+		  margin-left: 10px;
+		}
+		.rad{
+		  position: absolute;
+		  margin-left: 160px;
+		  margin-top: 0px;
+		  font-size: 30px;
+		  font-family: 'Open Sans Condensed', sans-serif;
+		  text-decoration: none;
+		}
+		.k{
+		  position: absolute;
+		  font-size: 12px;
+		  width:240px;
+		  margin-left: 110px;
+		  margin-top: 40px;
+		}
+		#line{
+		  width: 98%;
+		  background-color: #acacac;
+		  height: 1px;
+		  margin-top: 10px;
+		  margin-left: 1%;
+		}
+	</style>
+</head>
+
+<body>
+	<!-- Swiper -->
+	<div class="swiper-container">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide menu">
+			  <a class="h">
+			    /LINKSY
+			  </a>
+			  <div class="box">
+			  <p class="p">
+			    We are a tech based company with a goal to provide a link based service online for audiences who want all of their favourite links at one place. currently we are developing a beta version of its front end model and will launch official dynamic website in some time. 
+			    keep visiting to use our product good people!! 
+			  </p>
+			  </div>
+			</div>
+			<div class="swiper-slide content">
+				<div class="menu-button">
+					<div class="bar"></div>
+					<div class="bar"></div>
+					<div class="bar"></div>
+				</div>
+				<div class="box3">
+				  <img class="comn"src="Csb.jpg" >
+				  <a class="rad" href="https://codesandbox.io/">Codesandbox</a>
+				  <a class="k"> CodeSandbox is an online editor for rapid web development. With CodeSandbox, you can prototype quickly, experiment easily, and share creations with a click.</a>
+				</div>
+				<div class="line"></div>
+								<div class="box2">
+				  <img class="comn"src="Sb.jpg" >
+				  <a class="rad" href="https://stackblitz.com/">Stack blitz</a>
+				  <a class="k"> StackBlitz is an online IDE where you can create Angular & React projects that are immediately online & shareable via link… in just one click.</a>
+				</div>
+					<div class="line"></div>
+								<div class="box2">
+				  <img class="comn"src="Ca.jpg">
+				  <a class="rad" href="https://codeanywhere.com/">Codeanywhere</a>
+				  <a class="k"> Codeanywhere is a cross-platform cloud integrated development environment created by Codeanywhere, Inc</a>
+				</div>
+					<div class="line"></div>
+								<div class="box2">
+				  <img class="comn"src="Ct.jpg">
+				  <a class="rad" href="https://codetasty.com/">Codetasty</a>
+				  <a class="k"> CodeTasty is powerful IDE in the cloud with additional features only a cloud application can give you.</a>
+				</div>
+					<div class="line"></div>
+								<div class="box2">
+				  <img class="comn"src="Gm.jpg">
+				  <a class="rad" href="https://www.goorm.io/">Goormide</a>
+				  <a class="k">goormIDE is an attractive tool for individuals, organizations, and enterprises for efficient software development. </a>
+				</div>
+					<div class="line"></div>
+								<div class="box2">
+				  <img class="comn"src="Cm.jpg">
+				  <a class="rad" href="https://codemirror.net/">Code mirror</a>
+				  <a class="k"> CodeMirror is a JavaScript component that provides a code editor in the browser. It has a rich programming API and a focus on extensibility. Wikipedia</a>
+				</div>
+					<div class="line"></div>
+								<div class="box2">
+				  <img class="comn"src="Cp.jpg" >
+				  <a class="rad"href="https://codepen.io/">Codepen</a>
+				  <a class="k">CodePen is a social development environment. At its heart, it allows you to write code in the browser, and see the results of it as you build. </a>
+				</div>
+					<div class="line"></div>
+								<div class="box2">
+				  <img class="comn"src="Pc.jpg">
+				  <a class="rad" href="https://playcode.io/">Playcode</a>
+				  <a class="k"> PlayCode fast compile javascript code from babel in realtime. In additional editor can compile javascript from preprocessors: typescript, coffeescript, livescript. ... js, react, jquery or something else. </a>
+				</div>
+					<div class="line"></div>
+								<div class="box2">
+				  <img class="comn"src="Ri.jpg">
+				  <a class="rad" href="https://repl.it/">Replit</a>
+				  <a class="k">Replit is a San Francisco-based start-up and an online IDE. Its name comes from the acronym REPL, which stands for "read–evaluate–print loop"  </a>
+				</div>
+					<div class="line"></div>
+								<div class="box2">
+				  <img class="comn"src="Gp.jpg">
+				  <a class="rad" href="https://www.gitpod.io/">Gitpod</a>
+				  <a class="k"> Gitpod is an open source platform for automated and ready-to-code development environments that blends into your existing workflow. .</a>
+				</div>
+								<div class="box2">
+				  <img class="comn"src="Ce.jpg">
+				  <a class="rad" href="https://codenvy.com/">Codenvy</a>
+				  <a class="k"> Eclipse Che is an open-source, Java-based developer workspace server and Online IDE. It includes a multi-user remote development platform. The workspace server comes with a flexible RESTful webservice.</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Swiper JS -->
+	<script src="../package/swiper-bundle.min.js"></script>
+
+	<!-- Initialize Swiper -->
+	<script>
+		var menuButton = document.querySelector('.menu-button');
+		var openMenu = function () {
+			swiper.slidePrev();
+		};
+		var swiper = new Swiper('.swiper-container', {
+			slidesPerView: 'auto',
+			initialSlide: 1,
+			resistanceRatio: 0,
+			slideToClickedSlide: true,
+			on: {
+				slideChangeTransitionStart: function () {
+					var slider = this;
+					if (slider.activeIndex === 0) {
+						menuButton.classList.add('cross');
+						// required because of slideToClickedSlide
+						menuButton.removeEventListener('click', openMenu, true);
+					} else {
+						menuButton.classList.remove('cross');
+					}
+				}
+				, slideChangeTransitionEnd: function () {
+					var slider = this;
+					if (slider.activeIndex === 1) {
+						menuButton.addEventListener('click', openMenu, true);
+					}
+				},
+			}
+		});
+	</script>
+
+</body>
+
+</html>
